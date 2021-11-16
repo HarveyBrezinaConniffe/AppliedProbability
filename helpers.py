@@ -8,8 +8,6 @@ def simulateGame(game, iterations):
 	printStats(winnings, playTimes)
 
 def printStats(winnings, playTimes):
-	winnings = map(float, winnings)
-	playTimes = map(float, playTimes)
 	# Expected winnings
 	expectedWinnings = 0
 	for winning in winnings:
