@@ -24,6 +24,18 @@ for winning in winnings:
 		wins += 1
 winProportion = wins/len(winnings)
 
+# Expected playing time
+playingTime = 1
+
+# Maximum loss
+maxLoss = abs(min(winnings))
+
+# Maximum win
+maxWin = max(winnings)
+
 print("Game 1:")
 print("Expected winnings: {}".format(expectedWinnings))
 print("Proportion of games won: {}".format(winProportion))
+print("Expected playing time per game: {}".format(playingTime))
+print("Maximum loss: ${}".format(maxLoss))
+print("Maximim win: ${}".format(maxWin))
