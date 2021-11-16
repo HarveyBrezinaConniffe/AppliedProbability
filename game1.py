@@ -1,10 +1,11 @@
 import random as rand
 import helpers
 
-def simulateOneGame():
+def game1():
 	slot = rand.randint(0, 36)
 	if slot != 0 and slot%2 == 0:
 		return 1, 1
 	return -1, 1
 
-helpers.simulateGame(simulateOneGame, 10000)
+winnings, playTimes = helpers.simulateGame(game1, 10000)
+helpers.printStats(winnings, playTimes)

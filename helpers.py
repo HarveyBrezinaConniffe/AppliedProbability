@@ -5,7 +5,7 @@ def simulateGame(game, iterations):
 		winning, playTime = game()
 		winnings.append(winning)
 		playTimes.append(playTime)
-	printStats(winnings, playTimes)
+	return winnings, playTimes
 
 def printStats(winnings, playTimes):
 	# Expected winnings

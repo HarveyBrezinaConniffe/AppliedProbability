@@ -28,4 +28,5 @@ def game4():
 
 	return balance, playingTime
 
-helpers.simulateGame(game4, 10000)
+winnings, playTimes = helpers.simulateGame(game4, 10000)
+helpers.printStats(winnings, playTimes)
