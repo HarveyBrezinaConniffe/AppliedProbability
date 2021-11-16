@@ -1,6 +1,7 @@
 import random as rand
+import helpers
 
-def simulateOneGame():
+def game4():
 	balance = 0
 	playingTime = 0
 	numberList = [1, 2, 3, 4]
@@ -27,42 +28,4 @@ def simulateOneGame():
 
 	return balance, playingTime
 
-# Simulate 10,000 games
-winnings = []
-playTimes = []
-for i in range(10000):
-	winning, playTime = simulateOneGame()
-	winnings.append(winning)
-	playTimes.append(playTime)
-
-# Expected winnings
-expectedWinnings = 0
-for winning in winnings:
-	expectedWinnings += winning
-expectedWinnings /= len(winnings)
-
-# Proportion of wins
-wins = 0
-for winning in winnings:
-	if winning > 0:
-		wins += 1
-winProportion = wins/len(winnings)
-
-# Expected playing time
-playingTime = 0
-for playTime in playTimes:
-	playingTime += playTime
-playingTime /= len(playTimes)
-
-# Maximum loss
-maxLoss = abs(min(winnings))
-
-# Maximum win
-maxWin = max(winnings)
-
-print("Game 1:")
-print("Expected winnings: {}".format(expectedWinnings))
-print("Proportion of games won: {}".format(winProportion))
-print("Expected playing time per game: {}".format(playingTime))
-print("Maximum loss: ${}".format(maxLoss))
-print("Maximim win: ${}".format(maxWin))
+helpers.simulateGame(game4, 10000)
