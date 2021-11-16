@@ -17,5 +17,13 @@ for winning in winnings:
 	expectedWinnings += winning
 expectedWinnings /= len(winnings)
 
+# Proportion of wins
+wins = 0
+for winning in winnings:
+	if winning > 0:
+		wins += 1
+winProportion = wins/len(winnings)
+
 print("Game 1:")
 print("Expected winnings: {}".format(expectedWinnings))
+print("Proportion of games won: {}".format(winProportion))
