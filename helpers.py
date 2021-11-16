@@ -15,6 +15,7 @@ def printStats(winnings, playTimes):
 	for winning in winnings:
 		expectedWinnings += winning
 	expectedWinnings /= len(winnings)
+	winningsVariance = getVariance(winnings, expectedWinnings)
 
 	# Proportion of wins
 	wins = 0
@@ -24,10 +25,11 @@ def printStats(winnings, playTimes):
 	winProportion = wins/len(winnings)
 
 	# Expected playing time
-	playingTime = 0
+	playingTime = 0.
 	for playTime in playTimes:
 		playingTime += playTime
 	playingTime /= len(playTimes)
+	playingTimeVariance = getVariance(playTimes, playingTime)
 
 	# Maximum loss
 	maxLoss = abs(min(winnings))
@@ -36,8 +38,10 @@ def printStats(winnings, playTimes):
 	maxWin = max(winnings)
 
 	print("Expected winnings: {}".format(expectedWinnings))
+	print("Expected winnings variance: {}".format(winningsVariance))
 	print("Proportion of games won: {}".format(winProportion))
 	print("Expected playing time per game: {}".format(playingTime))
+	print("Playing time variance: {}".format(playingTimeVariance))
 	print("Maximum loss: ${}".format(maxLoss))
 	print("Maximim win: ${}".format(maxWin))
 
