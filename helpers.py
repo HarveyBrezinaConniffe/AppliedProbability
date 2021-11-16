@@ -67,6 +67,7 @@ def plotAvgAndVariance(arr):
 	
 	plt.plot(runningAvgs, label="Average")
 	plt.plot(runningVariances, label="Variance")
+	plt.title("Avg and variance")
 	plt.legend()
 	plt.xlabel("Iteration")
 	plt.show()
