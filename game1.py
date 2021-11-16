@@ -9,3 +9,4 @@ def game1():
 
 winnings, playTimes = helpers.simulateGame(game1, 10000)
 helpers.printStats(winnings, playTimes)
+helpers.plotAvgAndVariance(winnings)
