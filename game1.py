@@ -10,7 +10,7 @@ def game1():
 winnings, playTimes = helpers.simulateGame(game1, 10000)
 helpers.printStats(winnings, playTimes)
 # Plot avg and variance of winnings
-helpers.plotAvgAndVariance(winnings)
+helpers.plotAvgAndVariance(winnings, "Avg and variance of winnings")
 # Plot avg and variance of proportion of wins
 propOfWins = list(map(int, (x > 0 for x in winnings)))
-helpers.plotAvgAndVariance(propOfWins)
+helpers.plotAvgAndVariance(propOfWins, "Avg and variance of proportion of wins")
