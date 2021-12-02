@@ -18,11 +18,16 @@ def printStats(winnings, playTimes):
 	winningsVariance = getVariance(winnings, expectedWinnings)
 
 	# Proportion of wins
+	winsAndLosses = []
 	wins = 0
 	for winning in winnings:
 		if winning > 0:
+			winsAndLosses.append(1)
 			wins += 1
+		else:	
+			winsAndLosses.append(0)
 	winProportion = wins/len(winnings)
+	winProportionVariance = getVariance(winsAndLosses, winProportion)
 
 	# Expected playing time
 	playingTime = 0.
@@ -40,6 +45,7 @@ def printStats(winnings, playTimes):
 	print("Expected winnings: {}".format(expectedWinnings))
 	print("Expected winnings variance: {}".format(winningsVariance))
 	print("Proportion of games won: {}".format(winProportion))
+	print("Proportion of games won variance: {}".format(winProportionVariance))
 	print("Expected playing time per game: {}".format(playingTime))
 	print("Playing time variance: {}".format(playingTimeVariance))
 	print("Maximum loss: ${}".format(maxLoss))
