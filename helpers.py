@@ -63,7 +63,7 @@ def getVariance(arr, mean):
 		total += (item-mean)**2
 	return total/(len(arr)-1)			
 
-def plotAvgAndVariance(arr):
+def plotAvgAndVariance(arr, title="Avg and variance"):
 	runningAvgs = []
 
 	runningVariances = []
@@ -77,7 +77,7 @@ def plotAvgAndVariance(arr):
 	
 	plt.plot(runningAvgs, label="Average")
 	plt.plot(runningVariances, label="Variance")
-	plt.title("Avg and variance")
+	plt.title(title)
 	plt.legend()
 	plt.xlabel("Iteration")
 	plt.show()
