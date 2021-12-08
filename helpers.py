@@ -11,10 +11,7 @@ def simulateGame(game, iterations):
 
 def printStats(winnings, playTimes):
 	# Expected winnings
-	expectedWinnings = 0
-	for winning in winnings:
-		expectedWinnings += winning
-	expectedWinnings /= len(winnings)
+	expectedWinnings = getMean(winnings)
 	winningsVariance = getVariance(winnings, expectedWinnings)
 
 	# Proportion of wins
@@ -72,8 +69,8 @@ def plotAvgAndVariance(arr, title="Avg and variance"):
 		avg = getMean(arr[0:i])
 		var = getVariance(arr[0:i], avg)
 		
-		runningVariances.append(avg)
-		runningAvgs.append(var)
+		runningAvgs.append(avg)
+		runningVariances.append(var)
 	
 	plt.plot(runningAvgs, label="Average")
 	plt.plot(runningVariances, label="Variance")
