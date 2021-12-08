@@ -1,4 +1,5 @@
 import random
+import helpers
 import numpy as np
 
 def cardGame():
@@ -16,7 +17,7 @@ def main():
         dataSet.append(cardGame())   # add an instant of card game 10,000 times
     variance = np.var(dataSet)
     expectation = np.mean(dataSet)
-
+    helpers.plotAvgAndVariance(dataSet, title="Avg and variance")
     print("The variance of the 10,000 repititions: " + str(variance))
     print("The expectation of the 10,000 repititions: " + str(expectation))
 
