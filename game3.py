@@ -6,7 +6,7 @@ def game3():
     betAmount = 1
     count = 0
     balance = 0
-    while balance <= 10 and betAmount < 100:
+    while balance <= 10 and betAmount <= 100:
         amountWon = 0
         balance -= betAmount
         count += 1
